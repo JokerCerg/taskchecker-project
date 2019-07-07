@@ -8,4 +8,11 @@
 
     <h3 class="mb-5">Your Tasks:</h3>
 
+    {% for task in tasks %}
+        <p>
+            {{ task }}
+        </p>
+    {% endfor %}
+
+
 {% endblock %}
