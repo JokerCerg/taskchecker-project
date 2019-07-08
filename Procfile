@@ -1,1 +1,1 @@
-web: gunicorn TaskChecker.wsgi
+web: gunicorn tcproject.wsgi
