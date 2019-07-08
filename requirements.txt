@@ -1,0 +1,7 @@
+Django==2.2
+pygame==1.9.5
+pytz==2018.9
+simple-draw==2.6.5
+sqlparse==0.3.0
+termcolor==1.1.0
+gunicorn==19.9.0

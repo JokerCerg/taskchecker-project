@@ -1,0 +1,17 @@
+
+{
+  "name": "TaskChecker",
+  "description": "common task checker",
+  "image": "heroku/python",
+  "repository": "https://github.com/JokerCerg/taskchecker-project.git",
+  "keywords": ["python", "django" ],
+  "addons": [ "heroku-postgresql" ],
+  "environments": {
+    "test": {
+      "scripts": {
+        "test-setup": "python manage.py",
+        "test": "python manage.py test"
+      }
+    }
+  }
+}
