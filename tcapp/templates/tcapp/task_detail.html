@@ -1,0 +1,14 @@
+{% extends 'tcapp/base_tcapp.html' %}
+
+{% block title %}
+    {{ task.title }} - {{ block.super }}
+{% endblock %}
+
+{% block content %}
+    <h1 class="mt-5">
+        {{ task.title }}
+    </h1>
+    <p>
+        {{ task.body }}
+    </p>
+{% endblock %}

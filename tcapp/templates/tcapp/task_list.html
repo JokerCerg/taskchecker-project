@@ -14,7 +14,7 @@
             <div class="card-body">
                 <h5 class="card-title">{{ task.title }}</h5>
                 <p class="card-text">{{ task.body|truncatewords:10 }}</p>
-                <a href="#" class="btn btn-primary">Open</a>
+                <a href="{{ task.get_absolute_url }}" class="btn btn-primary">Open</a>
             </div>
         </div>
 
