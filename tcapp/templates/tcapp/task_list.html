@@ -6,13 +6,18 @@
 
 {% block content %}
 
-    <h3 class="mb-5">Your Tasks:</h3>
+    <h3 class="mb-3 pl-3">Your Tasks:</h3>
 
-{#    {% for task in tasks %}#}
-{#        <p>#}
-{#            {{ task }}#}
-{#        </p>#}
-{#    {% endfor %}#}
+    {% for task in tasks %}
 
+        <div class="card mb-3" style="width: 18rem;">
+            <div class="card-body">
+                <h5 class="card-title">{{ task.title }}</h5>
+                <p class="card-text">{{ task.body|truncatewords:10 }}</p>
+                <a href="#" class="btn btn-primary">Open</a>
+            </div>
+        </div>
+
+    {% endfor %}
 
 {% endblock %}
