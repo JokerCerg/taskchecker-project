@@ -1,0 +1,19 @@
+{% extends 'tcapp/base_tcapp.html' %}
+
+{% block title %}
+    Task Create - {{ block.super }}
+{% endblock %}
+
+
+{% block content %}
+
+    <form action="{% url 'task_create_url' %}">
+        {% csrf_token %}
+        <p> title {{ form.title }} </p>
+        <p> slug {{ form.slug }} </p>
+        <p> body {{ form.body }} </p>
+        <button type="submit" class="btn btn-primary">Create</button>
+    </form>
+    
+{% endblock %}
+
