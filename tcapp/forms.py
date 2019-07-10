@@ -8,6 +8,10 @@ class TaskForm(forms.Form):
     slug = forms.CharField(max_length=50)
     body = forms.CharField()
 
+    title.widget.attrs.update({'class': 'form-control'})
+    slug.widget.attrs.update({'class': 'form-control'})
+    body.widget.attrs.update({'class': 'form-control'})
+
     def clean_slug(self):
         new_slug = self.cleaned_data['slug'].lower()
 

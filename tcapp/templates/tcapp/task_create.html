@@ -9,9 +9,19 @@
 
     <form action="{% url 'task_create_url' %}">
         {% csrf_token %}
-        <p> title {{ form.title }} </p>
-        <p> slug {{ form.slug }} </p>
-        <p> body {{ form.body }} </p>
+
+        {% for field in form %}
+            {% if field.errors %}
+                <div class="alert alert-danger">
+                    {{ field.errors }}
+                </div>
+            {% endif %}
+            
+            {{ field.label }}
+            {{ field }}
+
+        {% endfor %}
+
         <button type="submit" class="btn btn-primary">Create</button>
     </form>
     
