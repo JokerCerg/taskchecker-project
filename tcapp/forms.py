@@ -17,9 +17,13 @@ class TaskForm(forms.Form):
 
         if new_slug == 'create':
             raise ValidationError('Slug may not be "create"')
+        return new_slug
 
     def save(self):
-        new_task = Task.objects.create(title=self.cleaned_data['title'], slug=self.cleaned_data['slug'], body=['body'])
+        new_task = Task.objects.create(
+            title=self.cleaned_data['title'],
+            slug=self.cleaned_data['slug'],
+            body=self.cleaned_data['body'])
         return new_task
 
 
