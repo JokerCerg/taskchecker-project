@@ -1,5 +1,6 @@
 from django.shortcuts import render
 from django.views.generic import View
+
 from .utils import *
 from .models import Task
 from .forms import TaskForm
