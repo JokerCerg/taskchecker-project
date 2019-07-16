@@ -1,0 +1,15 @@
+{%  extends 'tcapp/base_tcapp.html'%}
+
+{% block title %}
+    Delete Task "{{ task.title|title }}" - {{ block.super }}
+{% endblock %}
+
+{% block content %}
+    <form action="{{ task.get_delete_url }}" method="post">
+        {% csrf_token %}
+        <h3>Are you sure you want delete "<b>{{ task.title|title }}</b>" task?</h3>
+        <a href="{{ task.get_absolute_url }}" class="btn btn-secondary">Cancel</a>
+        <button type="submit" name="button" class="btn btn-danger">DELETE</button>
+    </form>
+{% endblock %}
+
