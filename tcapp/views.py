@@ -16,20 +16,27 @@ class TaskDetail(ObjectDetailMixin, View):
     template = 'tcapp/task_detail.html'
 
 
-class TaskUpdate(View):
-    def get(self, request, slug):
-        task = Task.objects.get(slug__iexact=slug)
-        bound_form = TaskForm(initial={'title': task.title, 'body': task.body})
-        return render(request, 'tcapp/task_update.html', context={'form': bound_form, 'task': task})
+class TaskUpdate(ObjectUpdateMixin, View):
+    model = Task
+    model_form = TaskForm
+    template = 'tcapp/task_update.html'
 
-    def post(self, request, slug):
-        task = Task.objects.get(slug__iexact=slug)
-        bound_form = TaskForm(request.POST)
+    # def get(self, request, slug):
+    #     task = Task.objects.get(slug__iexact=slug)
+    #     bound_form = TaskForm(initial={'title': task.title, 'body': task.body})
+    #     return render(request, 'tcapp/task_update.html', context={'form': bound_form, 'task': task})
+    #
+    # def post(self, request, slug):
+    #     task = Task.objects.get(slug__iexact=slug)
+    #     bound_form = TaskForm(request.POST)
+    #
+    #     if bound_form.is_valid():
+    #         new_task = bound_form.save()
+    #         return redirect(new_task)
+    #     return render(request, 'tcapp/task_update.html', context={'form': bound_form, 'task': task})
 
-        if bound_form.is_valid():
-            new_task = bound_form.save()
-            return redirect(new_task)
-        return render(request, 'tcapp/task_update.html', context={'form': bound_form, 'task': task})
+# class TaskDelete(View):
+#     def get(self, request, slug):
 
 
 def tasks_list(request):
