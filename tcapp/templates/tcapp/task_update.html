@@ -11,7 +11,6 @@
         {% csrf_token %}
 
         {% for field in form %}
-
             <div class="form-group">
                 {% if field.errors %}
                     <div class="alert alert-danger">
@@ -21,10 +20,10 @@
                     {{ field.label }}
                     {{ field }}
             </div>
-
         {% endfor %}
 
         <button type="submit" class="btn btn-primary">Update</button>
+        <a href="{{ task.get_delete_url }}" class="btn btn-danger">Delete</a>
     </form>
 
 {% endblock %}
