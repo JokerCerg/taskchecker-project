@@ -59,7 +59,7 @@ class ObjectDeleteMixin:
         obj = self.model.objects.get(slug__iexact=slug)
         return render(request, self.templates, context={self.model.__name__.lower(): obj})
 
-    def post(self, slug):
+    def post(self, request, slug):
         obj = self.model.objects.get(slug__iexact=slug)
         obj.delete()
         return redirect(reverse(self.redirect_url))
