@@ -1,13 +1,15 @@
 from django.db import models
 from django.shortcuts import reverse
-
 from django.utils.text import slugify
-from time import time
 
 
 def gen_slug(s):
-    new_slug = slugify(s, allow_unicode=True)
-    return new_slug + '-' + str(int(time()))
+    title_slug = slugify(s, allow_unicode=True)
+    count_slug = Task.objects.all().filter(title__iexact=s).count()
+    if count_slug > 0:
+        return title_slug + '-' + str(int(count_slug + 1))
+    else:
+        return title_slug
 
 
 class Task(models.Model):
