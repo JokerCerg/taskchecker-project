@@ -3,13 +3,17 @@ from django.shortcuts import reverse
 from django.utils.text import slugify
 
 
-def gen_slug(s):
-    title_slug = slugify(s, allow_unicode=True)
-    count_slug = Task.objects.all().filter(title__iexact=s).count()
-    if count_slug > 0:
-        return title_slug + '-' + str(int(count_slug + 1))
-    else:
-        return title_slug
+def gen_slug(title):
+    title_slug = slugify(title, allow_unicode=True)
+    check_slug = Task.objects.all().filter(slug__iexact=title_slug).count()
+    n = 1
+    while check_slug != 0:
+        test_slug = title_slug + '-' + str(n)
+        n += 1
+        check_slug = Task.objects.all().filter(slug__iexact=test_slug).count()
+        if check_slug == 0:
+            title_slug = test_slug
+    return title_slug
 
 
 class Task(models.Model):

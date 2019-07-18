@@ -1,0 +1,18 @@
+.btn {
+    border-radius: 30px;
+}
+
+.card-body{
+    border-radius: 300px;
+}
+
+.upd-form-bottom-btn {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.upd-form-bottom-btn .btn-content {
+    margin-right: 0px;
+}
+

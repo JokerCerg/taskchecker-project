@@ -22,11 +22,16 @@
             </div>
         {% endfor %}
 
-        <button type="submit" class="btn btn-primary">Update</button>
-        <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#myModal">Delete</button>
+        <div class="upd-form-bottom-btn">
+            <div class="btn-content">
+                <button type="submit" class="btn btn-primary">Update</button>
+                <a href="{% url 'tasks_list_url' %}" class="btn btn-secondary">Cancel</a>
+            </div>
+            <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#myModal">Delete</button>
+        </div>
     </form>
 
-    <!-- Button trigger modal -->
+
     <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog" role="document">
             <div class="modal-content">
