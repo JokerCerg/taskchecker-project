@@ -1,0 +1,9 @@
+.btn {
+    border: 0;
+}
+
+.upd-form-bottom-btn {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
