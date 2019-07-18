@@ -10,16 +10,16 @@
 
     {% for task in tasks %}
 
-        <div class="card mb-3" style="width: 18rem;">
+        <div class="card mb-3" style="width: 30rem; border: none;">
             <div class="card-body">
-                <h5 class="card-title">{{ task.title }}</h5>
-                <p class="card-text">{{ task.body|truncatewords:10 }}</p>
-                <div class="button-container">
-                <a href="{{ task.get_absolute_url }}" class="btn btn-primary">Open</a>
-                <a href="{{ task.get_update_url }}" class="btn btn-secondary">Edit</a>
-                </div>
+                <h4 class="card-title">{{ task.title }}</h4>
+                <h6 class="card-subtitle mb-2 text-muted">{{ task.date_pub }}</h6>
+                <p class="card-text">{{ task.body|truncatewords:10|truncatechars:80 }}.</p>
+                <a href="{{ task.get_absolute_url }}" class="card-link">Open</a>
+                <a href="{{ task.get_update_url }}" class="card-link">Edit</a>
             </div>
         </div>
+
 
     {% endfor %}
 

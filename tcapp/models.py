@@ -18,8 +18,9 @@ def gen_slug(title):
 
 class Task(models.Model):
     title = models.CharField(max_length=50, db_index=True)
-    slug = models.SlugField(max_length=50, blank=True, unique=True)
+    slug = models.SlugField(max_length=50, unique=True)
     body = models.TextField(blank=False, db_index=True)
+    date_pub = models.DateTimeField(auto_now_add=True)
 
     def get_absolute_url(self):
         return reverse('task_detail_url', kwargs={'slug': self.slug})
