@@ -30,7 +30,7 @@ class TaskDelete(ObjectDeleteMixin, View):
 
 
 def tasks_list(request):
-    tasks = Task.objects.all()
+    tasks = Task.objects.all().order_by('-date_pub')
     return render(request, 'tcapp/task_list.html', context={'tasks': tasks})
 
 
