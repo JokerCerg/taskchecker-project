@@ -26,7 +26,7 @@ SECRET_KEY = '8ov9s6ijgm7vk(=xe$9^efgfjdxj5w*#rnf&&b%ts549h-$urw'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['127.0.0.1', 'localhost', 'taskchecker-web-app.herokuapp.com']
+ALLOWED_HOSTS = ['127.0.0.1', 'localhost', 'taskchecker-web-app.herokuapp.com', 'www.taskcheck.me']
 
 
 # Application definition
@@ -111,11 +111,17 @@ AUTH_PASSWORD_VALIDATORS = [
 
 LANGUAGE_CODE = 'en-us'
 
-TIME_ZONE = 'UTC'
+TIME_ZONE = 'europe/Moscow'
 
 USE_I18N = True
 
-USE_L10N = True
+USE_L10N = False
+
+DATE_FORMAT = 'd.m.Y'
+
+DATETIME_FORMAT = 'd.m.Y H:i'
+
+TIME_FORMAT = 'H:i'
 
 USE_TZ = True
 

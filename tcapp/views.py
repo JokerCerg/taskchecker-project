@@ -25,7 +25,7 @@ class TaskUpdate(ObjectUpdateMixin, View):
 
 class TaskDelete(ObjectDeleteMixin, View):
     model = Task
-    templates = 'tcapp/task_delete.html'
+    template = ''
     redirect_url = 'tasks_list_url'
 
 
