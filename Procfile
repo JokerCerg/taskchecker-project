@@ -1,1 +1,1 @@
-web: gunicorn tcproject.wsgi
+web: gunicorn tcproject.wsgi:application --log-file=-
