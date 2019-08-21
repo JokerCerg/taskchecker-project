@@ -5,10 +5,12 @@
 {% endblock %}
 
 {% block content %}
-    <h1 class="mt-5">
-        {{ task.title }}
-    </h1>
-    <p>
-        {{ task.body }}
-    </p>
+    <div class="task-detail__container">
+        <h1 class="mt-5 text">
+            {{ task.title|title }}
+        </h1>
+        <p class="text">
+            {{ task.body|title }}
+        </p>
+    </div>
 {% endblock %}
